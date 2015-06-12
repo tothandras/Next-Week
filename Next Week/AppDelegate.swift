@@ -2,11 +2,21 @@
 //  AppDelegate.swift
 //  Next Week
 //
-//  Created by Andras Toth on 09/06/15.
+//  Created by Andras Toth on 11/06/15.
 //  Copyright (c) 2015 Andras Toth. All rights reserved.
 //
 
 import UIKit
+import Parse
+
+extension UIView {
+    class func loadFromNibNamed(nibNamed: String, bundle : NSBundle? = nil) -> UIView? {
+        return UINib(
+            nibName: nibNamed,
+            bundle: bundle
+            ).instantiateWithOwner(nil, options: nil)[0] as? UIView
+    }
+}
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,6 +25,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        
+        // Use Local Datastore
+        // Parse.enableLocalDatastore()
+        
+        // Initialize Parse
+        Parse.setApplicationId("dkio9S5e4vhuY88sBgi34Bu0Zk7t8suABu6cTR2F",
+            clientKey: "sFA4W4AgtlKnCBu1rDRaqTDp19JJetFFhBnolsfs")
+        
+//                for i in 1...20 {
+//                    let item = TodoItem(name: "Test \(i)", note: "Note for test \(i)", categories: [String](), deadline: NSDate())
+//                    DataProvider.saveObjectEventually(item.toObject())
+//                }
+        
         // Override point for customization after application launch.
         return true
     }
