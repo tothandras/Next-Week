@@ -15,7 +15,7 @@ class TodoItem: Printable {
     
     var name: String
     var note: String
-    var categories: [String]
+    var categories = [String]()
     var deadline: NSDate
     var priority: Priority = Priority.Normal
     var state = States.Created
@@ -39,10 +39,10 @@ class TodoItem: Printable {
         }
     }
     
-    init(name: String, note: String, categories: [String], deadline: NSDate) {
+    init(name: String, note: String, priority: Priority, deadline: NSDate) {
         self.name = name
         self.note = note
-        self.categories = categories
+        self.priority = priority
         self.deadline = deadline
     }
     
@@ -55,10 +55,9 @@ class TodoItem: Printable {
         let state = object[TodoItem.Fields.State.rawValue] as String
         let subTasks = object[TodoItem.Fields.subTasks.rawValue] as [Task]
 
-        self.init(name: name, note: note, categories: categories, deadline: deadline)
+        self.init(name: name, note: note, priority: Priority(rawValue: priority)!, deadline: deadline)
         self.state = States(rawValue: state)!
         self.subTasks = subTasks
-        self.priority = Priority(rawValue: priority)!
         self.id = object.objectId
     }
     

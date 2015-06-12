@@ -33,6 +33,8 @@
 		466717AC1B2A32AD00E6341A /* Priority.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466717AB1B2A32AD00E6341A /* Priority.swift */; };
 		46ABD3DC1B2A75E100ABE3F2 /* TodoViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46ABD3DA1B2A75E100ABE3F2 /* TodoViewCell.swift */; };
 		46ABD3DD1B2A75E100ABE3F2 /* TodoViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46ABD3DB1B2A75E100ABE3F2 /* TodoViewCell.xib */; };
+		46ABD3E21B2AC7BD00ABE3F2 /* SignUpInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46ABD3E11B2AC7BD00ABE3F2 /* SignUpInViewController.swift */; };
+		46ABD3E41B2AD31400ABE3F2 /* NewItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46ABD3E31B2AD31400ABE3F2 /* NewItemViewController.swift */; };
 		46C7D4761B26E68A00B6D00A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C7D4751B26E68A00B6D00A /* AppDelegate.swift */; };
 		46C7D47B1B26E68A00B6D00A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46C7D4791B26E68A00B6D00A /* Main.storyboard */; };
 		46C7D4801B26E68A00B6D00A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46C7D47E1B26E68A00B6D00A /* LaunchScreen.xib */; };
@@ -76,6 +78,8 @@
 		466717AB1B2A32AD00E6341A /* Priority.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Priority.swift; sourceTree = "<group>"; };
 		46ABD3DA1B2A75E100ABE3F2 /* TodoViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoViewCell.swift; sourceTree = "<group>"; };
 		46ABD3DB1B2A75E100ABE3F2 /* TodoViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TodoViewCell.xib; sourceTree = "<group>"; };
+		46ABD3E11B2AC7BD00ABE3F2 /* SignUpInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpInViewController.swift; sourceTree = "<group>"; };
+		46ABD3E31B2AD31400ABE3F2 /* NewItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewItemViewController.swift; sourceTree = "<group>"; };
 		46C7D4701B26E68A00B6D00A /* Next Week.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Next Week.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		46C7D4741B26E68A00B6D00A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		46C7D4751B26E68A00B6D00A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -208,8 +212,17 @@
 		46ABD3E01B2AAF8000ABE3F2 /* SignUpIn */ = {
 			isa = PBXGroup;
 			children = (
+				46ABD3E11B2AC7BD00ABE3F2 /* SignUpInViewController.swift */,
 			);
 			name = SignUpIn;
+			sourceTree = "<group>";
+		};
+		46ABD3E51B2AD31900ABE3F2 /* NewItem */ = {
+			isa = PBXGroup;
+			children = (
+				46ABD3E31B2AD31400ABE3F2 /* NewItemViewController.swift */,
+			);
+			name = NewItem;
 			sourceTree = "<group>";
 		};
 		46C7D4671B26E68A00B6D00A = {
@@ -234,13 +247,14 @@
 		46C7D4721B26E68A00B6D00A /* Next Week */ = {
 			isa = PBXGroup;
 			children = (
-				46ABD3E01B2AAF8000ABE3F2 /* SignUpIn */,
 				46C7D4791B26E68A00B6D00A /* Main.storyboard */,
 				46C7D47E1B26E68A00B6D00A /* LaunchScreen.xib */,
+				46ABD3E01B2AAF8000ABE3F2 /* SignUpIn */,
+				46ABD3D61B2A5A6800ABE3F2 /* Table */,
 				46ABD3DE1B2A8C5900ABE3F2 /* Detail */,
+				46ABD3E51B2AD31900ABE3F2 /* NewItem */,
 				4643152D1B298D24007E06DE /* Common */,
 				4643152A1B298CED007E06DE /* Data */,
-				46ABD3D61B2A5A6800ABE3F2 /* Table */,
 				4643151F1B2986D1007E06DE /* Resources */,
 				46C7D4731B26E68A00B6D00A /* Supporting Files */,
 			);
@@ -386,8 +400,10 @@
 				466717AC1B2A32AD00E6341A /* Priority.swift in Sources */,
 				464315381B2A014F007E06DE /* States.swift in Sources */,
 				464315341B29C626007E06DE /* DetailViewController.swift in Sources */,
+				46ABD3E41B2AD31400ABE3F2 /* NewItemViewController.swift in Sources */,
 				464315361B29CE8E007E06DE /* Task.swift in Sources */,
 				464315241B298B76007E06DE /* TodoItem.swift in Sources */,
+				46ABD3E21B2AC7BD00ABE3F2 /* SignUpInViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

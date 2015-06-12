@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import Parse
 
-class DetailViewController: UITableViewController {
+class DetailViewController: UIViewController {
     var object: PFObject?
     var item: TodoItem?
     
@@ -70,5 +70,28 @@ class DetailViewController: UITableViewController {
     
     func updateCounter() {
         timeLeft = item!.deadline.timeIntervalSinceDate(NSDate())
+    }
+    
+    @IBAction func newTask() {
+        let alertController = UIAlertController(
+            title: "Task",
+            message: "Please enter the name of your new task",
+            preferredStyle: UIAlertControllerStyle.Alert)
+        
+        var okAction = UIAlertAction(
+            title: "OK", style: UIAlertActionStyle.Default) {
+                (action) -> Void in
+                var name = (alertController.textFields?.first as UITextField).text
+                self.item?.subTasks.append(Task(name:name))
+        }
+        
+        alertController.addTextFieldWithConfigurationHandler {
+            (taskName) -> Void in
+            taskName.placeholder = ""
+        }
+        
+        alertController.addAction(okAction)
+        
+        self.presentViewController(alertController, animated: true, completion: nil)
     }
 }

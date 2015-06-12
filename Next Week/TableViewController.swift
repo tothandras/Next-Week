@@ -9,6 +9,7 @@
 import UIKit
 import Parse
 import ParseUI
+import Bolts
 
 class TableViewController: PFQueryTableViewController {
 
@@ -30,6 +31,7 @@ class TableViewController: PFQueryTableViewController {
     }
     
     override func viewDidAppear(animated: Bool) {
+        loadObjects()
         tableView.reloadData()
     }
     
@@ -71,7 +73,21 @@ class TableViewController: PFQueryTableViewController {
 
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == UITableViewCellEditingStyle.Delete {
-            self.removeObjectAtIndexPath(indexPath)
+
+            let alertController = UIAlertController(title: "Delete todo",
+                message: "Are you sure you want to delete this item?",
+                preferredStyle: UIAlertControllerStyle.Alert
+            )
+            alertController.addAction(UIAlertAction(title: "Yes",
+                style: UIAlertActionStyle.Default,
+                handler: { alertController in self.removeObjectAtIndexPath(indexPath)})
+            )
+            alertController.addAction(UIAlertAction(title: "No",
+                style: UIAlertActionStyle.Default,
+                handler: nil)
+            )
+            
+            self.presentViewController(alertController, animated: true, completion: nil)
         }
     }
     
@@ -120,7 +136,11 @@ class TableViewController: PFQueryTableViewController {
         return section == 0 ? "This week" : "Next week"
     }
     
-    @IBAction func add(sender: UIBarButtonItem) {
-        println("asd")
+    @IBAction func signOut() {
+        PFUser.logOut()
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewControllerWithIdentifier("SignUpInViewController") as UIViewController
+        self.presentViewController(vc, animated: true, completion: nil)
     }
 }
